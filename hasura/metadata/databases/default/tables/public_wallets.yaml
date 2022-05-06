@@ -1,0 +1,16 @@
+table:
+  name: wallets
+  schema: public
+insert_permissions:
+- permission:
+    backend_only: false
+    check: {}
+    columns:
+    - key
+  role: public
+select_permissions:
+- permission:
+    columns:
+    - key
+    filter: {}
+  role: public
