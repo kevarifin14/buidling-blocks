@@ -1,5 +1,6 @@
 import { ApolloClientProvider } from "contexts/apollo";
 import { MetadataProvider } from "contexts/metadata";
+import { WalletConnectionProvider } from "contexts/walletConnection";
 import { ThemeProvider } from "next-themes";
 import { ReactNode } from "react";
 
@@ -11,7 +12,9 @@ export function Providers({ children }: ProvidersProps) {
   return (
     <MetadataProvider>
       <ThemeProvider attribute="class">
-        <ApolloClientProvider>{children}</ApolloClientProvider>
+        <ApolloClientProvider>
+          <WalletConnectionProvider>{children}</WalletConnectionProvider>
+        </ApolloClientProvider>
       </ThemeProvider>
     </MetadataProvider>
   );
